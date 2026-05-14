@@ -136,12 +136,3 @@ hospital-patient-flow-analysis/
     └── project_brief.pdf
 ```
 
----
-
-# Author
-
-Healthcare Data Analysis Team 1
-
----
-
-# Project St
