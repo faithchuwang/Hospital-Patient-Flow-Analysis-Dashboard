@@ -39,9 +39,10 @@ The analysis answers four core leadership questions:
 ## Data Sources
 - **Dataset:** Hospital Operational Database (3 relational tables)
 - **Records:** 5,000 patient admissions
-- **Tables:** `patients`, `admissions`, `diagnoses`
+- **Files:** patients.csv, admissions.csv, diagnoses.csv — available in the /data folder
 - **Fields covered:** Patient demographics, admission type, department, admission and discharge
   datetimes, discharge disposition, and ICD-10 diagnosis codes
+
 
 ---
 
