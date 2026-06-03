@@ -29,10 +29,10 @@ as a team of four analysts. Acting as Junior Healthcare Data Analysts, the objec
 - Deliver a one-page executive summary communicating insights to a non-technical audience
 
 The analysis answers four core leadership questions:
-- Where is pressure entering the hospital, which routes, departments, or patient types?
+- Where is pressure entering the hospital — which routes, departments, or patient types?
 - How long are patients staying, and does that vary in ways that signal inefficiency?
 - Where are patients getting stuck between admission and discharge?
-- When does congestion most likely occur, by hour, by day, or by pattern?
+- When does congestion most likely occur — by hour, by day, or by pattern?
 
 ---
 
@@ -102,30 +102,21 @@ A 2-page interactive Power BI dashboard was built directly from the Week 4 SQL q
 ## Dashboard Preview
 
 ### Overview Page
-<img width="1221" height="685" alt="Overview" src="https://github.com/user-attachments/assets/6ec62c50-6ad0-4301-9f2e-62425f576c19" />
-
+[Insert dashboard screenshot]
 
 ### Diagnosis Page
-<img width="1224" height="682" alt="Diagnosis" src="https://github.com/user-attachments/assets/9763a702-d777-402f-be92-7c2015da66a1" />
+[Insert dashboard screenshot]
 
 ---
 
 ## Results/Findings
-1. Daily admissions are **stable but not predictable** — periodic surges above 20 admissions
-   create intermittent pressure on staffing, triage, and bed availability
-2. The average LOS of **4.03 days is nearly identical across all departments, diagnoses,
-   and discharge outcomes** — suggesting LOS is driven by standardized processes,
-   not clinical complexity
-3. **Emergency admissions account for 55.1%** of all inflow, making hospital demand
-   predominantly unplanned and reactive
-4. **Urgent admissions carry the highest LOS (4.3 days)** despite being the smallest
-   admission group — they disproportionately affect bed occupancy
-5. **26% of patients require post-acute care** on discharge — this external dependency
-   is the hospital's primary source of discharge delay and the main bottleneck in patient flow
-6. **Admissions peak at 5 AM and 7–8 PM**, aligned with shift transitions rather than
-   traditional daytime hours — current staffing schedules may not reflect actual demand
-7. **Orthopedics and Pediatrics** experience the highest admission volumes and represent
-   the most concentrated departmental pressure points
+1. Daily admissions are stable but not entirely predictable. Periodic surges above 20 admissions create intermittent pressure on staffing, triage, and bed availability that the hospital needs to plan for.
+2. The average LOS of 4.03 days is nearly identical across all departments, diagnoses, and discharge outcomes. This uniformity suggests that length of stay is governed more by standardized hospital processes than by how sick patients actually are.
+3. Emergency admissions account for 55.1% of all inflow, making hospital demand predominantly unplanned and reactive. This limits how much of operations can realistically be scheduled in advance.
+4. Urgent admissions carry the highest average LOS at 4.3 days, despite being the smallest admission group. Their disproportionate impact on bed occupancy makes them an important category to monitor.
+5. 26% of patients require post-acute care on discharge. Because discharge timing depends on external facility availability, this is the hospital's primary source of delay and the clearest bottleneck in patient flow.
+6. Admissions peak at 5 AM and again between 7 and 8 PM, which aligns with shift transition periods rather than traditional daytime hours. Current staffing schedules may not reflect when the hospital is actually under the most pressure.
+7. Orthopedics and Pediatrics record the highest admission volumes consistently, making them the most concentrated departmental pressure points in the system.
 
 ---
 
