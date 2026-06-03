@@ -102,10 +102,11 @@ A 2-page interactive Power BI dashboard was built directly from the Week 4 SQL q
 ## Dashboard Preview
 
 ### Overview Page
-[Insert dashboard screenshot]
+<img width="1221" height="685" alt="Overview" src="https://github.com/user-attachments/assets/6ec62c50-6ad0-4301-9f2e-62425f576c19" />
+
 
 ### Diagnosis Page
-[Insert dashboard screenshot]
+<img width="1224" height="682" alt="Diagnosis" src="https://github.com/user-attachments/assets/9763a702-d777-402f-be92-7c2015da66a1" />
 
 ---
 
