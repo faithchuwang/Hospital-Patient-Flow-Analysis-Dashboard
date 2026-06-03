@@ -29,10 +29,10 @@ as a team of four analysts. Acting as Junior Healthcare Data Analysts, the objec
 - Deliver a one-page executive summary communicating insights to a non-technical audience
 
 The analysis answers four core leadership questions:
-- Where is pressure entering the hospital — which routes, departments, or patient types?
+- Where is pressure entering the hospital, which routes, departments, or patient types?
 - How long are patients staying, and does that vary in ways that signal inefficiency?
 - Where are patients getting stuck between admission and discharge?
-- When does congestion most likely occur — by hour, by day, or by pattern?
+- When does congestion most likely occur, by hour, by day, or by pattern?
 
 ---
 
