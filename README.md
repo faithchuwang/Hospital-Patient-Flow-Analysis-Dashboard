@@ -29,10 +29,10 @@ as a team of four analysts. Acting as Junior Healthcare Data Analysts, the objec
 - Deliver a one-page executive summary communicating insights to a non-technical audience
 
 The analysis answers four core leadership questions:
-- Where is pressure entering the hospital — which routes, departments, or patient types?
+- Where is pressure entering the hospital, which routes, departments, or patient types?
 - How long are patients staying, and does that vary in ways that signal inefficiency?
 - Where are patients getting stuck between admission and discharge?
-- When does congestion most likely occur — by hour, by day, or by pattern?
+- When does congestion most likely occur, by hour, by day, or by pattern?
 
 ---
 
@@ -102,10 +102,11 @@ A 2-page interactive Power BI dashboard was built directly from the Week 4 SQL q
 ## Dashboard Preview
 
 ### Overview Page
-[Insert dashboard screenshot]
+<img width="1221" height="685" alt="Overview" src="https://github.com/user-attachments/assets/64d9c049-3482-4bbf-b1f0-f275c86daa75" />
+
 
 ### Diagnosis Page
-[Insert dashboard screenshot]
+<img width="1224" height="682" alt="Diagnosis" src="https://github.com/user-attachments/assets/feee4d87-bbc3-4cda-a629-d1626d3837ef" />
 
 ---
 
@@ -121,7 +122,7 @@ A 2-page interactive Power BI dashboard was built directly from the Week 4 SQL q
 ---
 
 ## Recommendations
-1. Prioritize discharge planning reform — strengthen coordination with rehabilitation
+1. Prioritize discharge planning reform, strengthen coordination with rehabilitation
    and skilled nursing facilities to reduce transition delays
 2. Align staffing schedules with actual peak admission times (early morning and evening)
    rather than traditional shift patterns
@@ -135,14 +136,14 @@ A 2-page interactive Power BI dashboard was built directly from the Week 4 SQL q
 ---
 
 ## Limitations
-- Analysis covers a single operational database snapshot — longitudinal trends
+- Analysis covers a single operational database snapshot, longitudinal trends
   cannot be fully assessed
 - LOS uniformity across all patient groups warrants clinical validation before
   using these findings for policy decisions
-- Discharge disposition data reflects recorded outcomes only — actual transfer
+- Discharge disposition data reflects recorded outcomes only, actual transfer
   timelines to post-acute facilities are not captured in this dataset
 - ICD-10 codes were not mapped to plain language diagnosis names in this dataset,
   limiting the interpretability of the diagnosis analysis for non-clinical audiences
 - The team was unable to collaborate simultaneously on the Power BI dashboard
-  due to Power BI Desktop's single-user limitation — dashboard was built by one
+  due to Power BI Desktop's single-user limitation, dashboard was built by one
   team member with group input via review sessions
