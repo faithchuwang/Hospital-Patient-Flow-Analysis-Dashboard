@@ -1,138 +1,156 @@
-# Hospital Patient Flow Analysis & Dashboard
+# Hospital Patient Flow — Operational Analysis & Dashboard
+
+A healthcare analytics project investigating patient flow patterns across a hospital system
+using relational SQL data, covering admission volume, length of stay, discharge outcomes,
+and operational bottlenecks. Built as part of the DataVerse Africa Healthcare Analytics
+Internship Program — Cohort 4.0.
+
+---
+
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Data Sources](#data-sources)
+- [Tools](#tools)
+- [Data Cleaning](#data-cleaning)
+- [Data Analysis](#data-analysis)
+- [Dashboard Preview](#dashboard-preview)
+- [Results/Findings](#resultsfindings)
+- [Recommendations](#recommendations)
+- [Limitations](#limitations)
+
+---
 
 ## Project Overview
+This project simulates a real-world hospital operations analytics assignment completed
+as a team of four analysts. Acting as Junior Healthcare Data Analysts, the objectives were to:
+- Investigate patient admissions and discharge data across three relational database tables
+- Answer 15 specific business questions using SQL to identify pressure points in patient flow
+- Build an interactive Power BI dashboard translating SQL findings into leadership-ready visuals
+- Deliver a one-page executive summary communicating insights to a non-technical audience
 
-This project analyzes hospital patient flow data to identify operational bottlenecks affecting patient throughput, discharge efficiency, and hospital capacity management. Using SQL, PostgreSQL, and Power BI, the analysis investigates admission trends, length of stay (LOS), discharge pathways, department workload, and timing patterns to uncover where congestion occurs within the hospital system.
-
-The project was completed as part of a healthcare operational analytics case study focused on transforming raw hospital data into actionable insights for leadership decision-making.
-
----
-
-# Business Problem
-
-Hospital leadership observed signs of patient flow inefficiency, including overcrowding, prolonged stays, and discharge delays. The objective of this analysis was to determine:
-
-* Where patient pressure enters the hospital
-* Which departments experience the highest strain
-* What factors contribute to prolonged bed occupancy
-* Where the primary operational bottleneck exists
-* How patient flow patterns impact hospital capacity
+The analysis answers four core leadership questions:
+- Where is pressure entering the hospital — which routes, departments, or patient types?
+- How long are patients staying, and does that vary in ways that signal inefficiency?
+- Where are patients getting stuck between admission and discharge?
+- When does congestion most likely occur — by hour, by day, or by pattern?
 
 ---
 
-# Tools & Technologies
-
-* PostgreSQL
-* SQL
-* VS Code
-* pgAdmin
-* Power BI
-* Excel / Power Query
+## Data Sources
+- **Dataset:** Hospital Operational Database (3 relational tables)
+- **Records:** 5,000 patient admissions
+- **Tables:** `patients`, `admissions`, `diagnoses`
+- **Fields covered:** Patient demographics, admission type, department, admission and discharge
+  datetimes, discharge disposition, and ICD-10 diagnosis codes
 
 ---
 
-# Dataset Structure
-
-The project uses three relational hospital operational tables:
-
-## patients
-
-* patient_id
-* age
-* sex
-
-## admissions
-
-* admission_id
-* patient_id
-* admission_datetime
-* discharge_datetime
-* admission_type
-* department
-* discharge_disposition
-
-## diagnosis
-
-* diagnosis_id
-* admission_id
-* icd10_code
+## Tools
+- **PostgreSQL (via Visual Studio Code)** — SQL querying and relational data analysis
+- **Power BI Desktop** — Interactive dashboard and data visualisation
+- **Microsoft Word** — Executive summary and project documentation
 
 ---
 
-# Key Business Questions
+## Data Cleaning
+The dataset was relatively clean on arrival. Pre-analysis validation confirmed structural
+integrity across all three tables before querying began.
 
-The analysis explored:
-
-1. Daily patient admission trends
-2. Average length of stay (LOS)
-3. LOS variation by department
-4. Admission type distribution
-5. Admission types associated with longest LOS
-6. Discharge disposition breakdown
-7. Relationship between discharge type and LOS
-8. Peak admission hours
-9. Day-of-week admission trends
-10. Departments with highest admission volume
-11. Relationship between age and LOS
-12. Whether older patients are more likely to require rehab/skilled nursing
-13. Most common diagnoses associated with admissions
-14. Diagnoses linked to longer hospital stays
-15. Identification of the hospital's primary patient flow bottleneck
+| Check Performed | Outcome |
+|---|---|
+| Primary and foreign key relationships | Confirmed intact across all three tables |
+| Null values in key fields | No significant nulls identified |
+| Datetime format consistency | admission_datetime and discharge_datetime formatted consistently |
+| Duplicate records | No duplicate admissions detected |
+| LOS calculation validation | Discharge minus admission datetime validated before use |
 
 ---
 
-# Key Findings
+## Data Analysis
+**Week 4 — SQL Operational Analysis**
 
-* Emergency admissions accounted for the majority of hospital inflow, creating continuous operational pressure.
-* Patient admissions followed a bi-modal timing pattern, with peak pressure occurring during early morning and evening periods.
-* Average length of stay remained relatively consistent across departments, diagnoses, and age groups.
-* Orthopedics, Pediatrics, Surgery, OB/GYN, and ICU handled the highest admission volumes.
-* Older patients were significantly more likely to require discharge to rehabilitation or skilled nursing facilities.
-* The strongest operational bottleneck was identified at the discharge stage rather than during treatment.
+Fifteen business questions were investigated and interpreted for a non-technical audience:
+
+| # | Business Question | Key Finding |
+|---|---|---|
+| 1 | Daily admission volume | 10–18 admissions per day; intermittent peaks above 20 |
+| 2 | Overall average LOS | 4.03 days |
+| 3 | LOS by department | Range: 3.9–4.2 days; Pediatrics, Surgery, Orthopedics highest |
+| 4 | Admission type distribution | Emergency 55.1%, Elective 29.56%, Urgent 15.34% |
+| 5 | Admission type with longest LOS | Urgent — 4.3 days average |
+| 6 | Discharge disposition breakdown | Home 71.24%, Rehab 15.68%, Skilled Nursing 10.38%, Expired 2.7% |
+| 7 | Discharge disposition vs. LOS | LOS nearly identical across all disposition types (~4 days) |
+| 8 | Peak admission hours | Bi-modal: 5 AM peak and 7–8 PM evening cluster |
+| 9 | Day-of-week admission patterns | Sunday highest (737); Saturday lowest (697) |
+| 10 | Top 5 departments by volume | Orthopedics (895), Pediatrics (884), Surgery (814), OB/GYN (809), ICU (807) |
+| 11 | Age vs. length of stay | No consistent increase with age; younger adults show slightly higher LOS |
+| 12 | Older patients and discharge destination | Older patients significantly more likely to discharge to rehab or skilled nursing |
+| 13 | Most common diagnoses | Gastroenteritis (771), Type II Diabetes (737), UTI (734), Hypertension (708) |
+| 14 | Diagnoses with longest LOS | LOS relatively uniform across diagnoses — systemic, not condition-driven |
+| 15 | Primary bottleneck | Discharge planning — particularly for patients requiring post-acute care transitions |
+
+**Week 5 — Power BI Dashboard**
+
+A 2-page interactive Power BI dashboard was built directly from the Week 4 SQL queries:
+- **Overview Page:** Admission trends, weekday patterns, admission type distribution,
+  LOS by admission type, discharge disposition breakdown
+- **Diagnosis Page:** Admissions and LOS by diagnosis, patient counts by shift,
+  age group and department filters
 
 ---
 
-# Main Bottleneck Identified
+## Dashboard Preview
 
-The analysis revealed that the hospital's biggest patient flow bottleneck occurs during discharge transitions to post-acute care facilities such as rehabilitation and skilled nursing centers.
+### Overview Page
+[Insert dashboard screenshot]
 
-While the hospital manages high and steady patient inflow effectively, delays in discharge coordination reduce bed turnover and create sustained congestion across departments. The bottleneck is therefore driven more by operational workflow inefficiencies and external discharge dependencies than by clinical complexity itself.
-
----
-
-# Dashboard & Storytelling
-
-The SQL analysis was translated into a Power BI dashboard designed for non-technical hospital leadership.
-
-Dashboard sections include:
-
-* Patient Inflow Overview
-* Admission Type Analysis
-* Length of Stay Analysis
-* Discharge Outcomes
-* Timing & Peak Pressure
-* Bottleneck Synthesis
+### Diagnosis Page
+[Insert dashboard screenshot]
 
 ---
 
-# Repository Structure
+## Results/Findings
+1. Daily admissions are **stable but not predictable** — periodic surges above 20 admissions
+   create intermittent pressure on staffing, triage, and bed availability
+2. The average LOS of **4.03 days is nearly identical across all departments, diagnoses,
+   and discharge outcomes** — suggesting LOS is driven by standardized processes,
+   not clinical complexity
+3. **Emergency admissions account for 55.1%** of all inflow, making hospital demand
+   predominantly unplanned and reactive
+4. **Urgent admissions carry the highest LOS (4.3 days)** despite being the smallest
+   admission group — they disproportionately affect bed occupancy
+5. **26% of patients require post-acute care** on discharge — this external dependency
+   is the hospital's primary source of discharge delay and the main bottleneck in patient flow
+6. **Admissions peak at 5 AM and 7–8 PM**, aligned with shift transitions rather than
+   traditional daytime hours — current staffing schedules may not reflect actual demand
+7. **Orthopedics and Pediatrics** experience the highest admission volumes and represent
+   the most concentrated departmental pressure points
 
-```text
-hospital-patient-flow-analysis/
-│
-├── README.md
-├── SQL_Query_T1.session.sql
-├── Query_output_T1.xlsx
-├── Insights.pdf
-├── Team_1 Report.pdf
-├── Hospital_Patient_Flow.pbix
-│
-├── images/
-│   ├── dashboard.png
-│   ├── admission_analysis.png
-│   └── los_analysis.png
-│
-└── docs/
-    └── project_brief.pdf
-```
+---
 
+## Recommendations
+1. Prioritize discharge planning reform — strengthen coordination with rehabilitation
+   and skilled nursing facilities to reduce transition delays
+2. Align staffing schedules with actual peak admission times (early morning and evening)
+   rather than traditional shift patterns
+3. Develop contingency protocols for high-volume surge days, particularly Sundays
+   and Thursdays when admissions trend higher
+4. Review urgent admission pathways to understand why this group consistently
+   yields the longest stays despite lower volume
+5. Monitor Orthopedics and Pediatrics capacity closely given their consistently
+   elevated admission volumes
+
+---
+
+## Limitations
+- Analysis covers a single operational database snapshot — longitudinal trends
+  cannot be fully assessed
+- LOS uniformity across all patient groups warrants clinical validation before
+  using these findings for policy decisions
+- Discharge disposition data reflects recorded outcomes only — actual transfer
+  timelines to post-acute facilities are not captured in this dataset
+- ICD-10 codes were not mapped to plain language diagnosis names in this dataset,
+  limiting the interpretability of the diagnosis analysis for non-clinical audiences
+- The team was unable to collaborate simultaneously on the Power BI dashboard
+  due to Power BI Desktop's single-user limitation — dashboard was built by one
+  team member with group input via review sessions
